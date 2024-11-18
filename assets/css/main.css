@@ -538,6 +538,15 @@ textarea{
 .time-line span {
     display: block;
 }
+.counter-wrapper {
+    margin-top: 50px;
+}
+.counter {
+    font-size: 80px;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1.2;
+}
 /* skill and experience section end  */
 
 /* portfolio section start */
@@ -687,3 +696,64 @@ textarea{
     padding-bottom: 50px !important;
 }
 /* contact section end */
+
+.div-rotator
+{	
+margin: 0;
+font-size:20px;
+width:100%;   /* do not set height, the script resets the effective values */
+height:500px;   
+color:#00ADB5;
+padding: 70px !important;
+}
+
+
+.div-rotator a,
+.div-rotator a:link,
+.div-rotator a:active
+{
+text-decoration:none;	
+color:#00ADB5;
+}
+
+.div-rotator a:hover
+{	
+color:#00ADB5;
+}
+
+.div-rotator .small
+{
+font-size:80%;		
+}
+
+.div-rotator .big
+{
+font-size:130%;		
+}
+
+.div-rotator .medium
+{
+font-size:100%;		
+}
+
+.div-rotator img
+{
+    top:-2em;	
+    left:-1em;	
+    width:4em;		
+    height:auto;
+}
+
+
+
+.infobox
+{
+margin-top:1em;
+border:2px solid #1188cc;
+background:#aaddff;
+border-radius:1em;	
+}
+
+
+
+
