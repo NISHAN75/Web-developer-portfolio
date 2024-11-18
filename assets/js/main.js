@@ -34,5 +34,116 @@
 		});
 	  } 
 
+	    // map
+		if ($('body').hasClass('contact-page')) {
+			const customStyle = [
+			  {
+				"elementType": "geometry",
+				"stylers": [{ "color": "#F2F2F2" }]
+			  },
+			  {
+				"elementType": "labels.icon",
+				"stylers": [{ "visibility": "off" }]
+			  },
+			  {
+				"elementType": "labels.text.fill",
+				"stylers": [{ "color": "#222831" }]
+			  },
+			  {
+				"elementType": "labels.text.stroke",
+				"stylers": [{ "color": "#F2F2F2" }]
+			  },
+			  {
+				"featureType": "administrative",
+				"elementType": "geometry",
+				"stylers": [{ "color": "#222831" }]
+			  },
+			  {
+				"featureType": "poi",
+				"elementType": "geometry",
+				"stylers": [{ "color": "#F2F2F2" }]
+			  },
+			  {
+				"featureType": "poi",
+				"elementType": "labels.text.fill",
+				"stylers": [{ "color": "#222831" }]
+			  },
+			  {
+				"featureType": "road",
+				"elementType": "geometry",
+				"stylers": [{ "color": "#FEFEFE" }]
+			  },
+			  {
+				"featureType": "road",
+				"elementType": "labels.text.fill",
+				"stylers": [{ "color": "#FEFEFE" }]
+			  },
+			  {
+				"featureType": "road.highway",
+				"elementType": "geometry",
+				"stylers": [{ "color": "#FEFEFE" }]
+			  },
+			  {
+				"featureType": "road.highway",
+				"elementType": "labels.text.fill",
+				"stylers": [{ "color": "#FEFEFE" }]
+			  },
+			  {
+				"featureType": "transit",
+				"elementType": "geometry",
+				"stylers": [{ "color": "#222831" }]
+			  },
+			  {
+				"featureType": "water",
+				"elementType": "geometry",
+				"stylers": [{ "color": "#00ADB5" }]
+			  },
+			  {
+				"featureType": "water",
+				"elementType": "labels.text.fill",
+				"stylers": [{ "color": "#00ADB5" }]
+			  }
+			];
+		  
+			function initMap() {
+			  const mapOptions = {
+				center: { lat: 22.2759685, lng: 91.7762721 },
+				zoom: 10,
+				styles: customStyle,
+				fullscreenControl: false, // Disable fullscreen button
+				streetViewControl: false, // Disable Street View button
+				mapTypeControl: false, // Disable Map/Satellite toggle
+				zoomControl: false, // Disable zoom controls
+			  };
+		  
+			  const map = new google.maps.Map(document.getElementById("map"), mapOptions);
+		  
+			  const customIcon = {
+				url: "http://127.0.0.1:5500/assets/images/map/map-icon.png",
+				scaledSize: new google.maps.Size(40, 40),
+				origin: new google.maps.Point(0, 0),
+				anchor: new google.maps.Point(25, 50),
+			  };
+		  
+			  const customMarker = new google.maps.Marker({
+				position: { lat: 22.2759685, lng: 91.7762721 },
+				map: map,
+				icon: customIcon,
+				title: "Custom Marker",
+			  });
+		  
+			  const infoWindow = new google.maps.InfoWindow({
+				content: '<div class="map-card"><h6>Potenga</h6><p>My workspace is at Potenga. Feel free to reach out!</p></div>',
+			  });
+		  
+			  customMarker.addListener("click", function () {
+				infoWindow.open(map, customMarker);
+			  });
+			}
+		  
+			initMap();
+		  }
+		  
+
 	});
 })(jQuery);
