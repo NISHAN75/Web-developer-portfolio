@@ -45,6 +45,7 @@ body {
 	line-height: 1.5;
 	font-weight: 400;
     font-family: "Rajdhani", sans-serif;
+    cursor:none;
 }
 
 html.lenis,
@@ -64,13 +65,11 @@ html.lenis body {
 	overflow: hidden;
 }
 
-.letter {
-    margin: 0 -0.3px;
-}
+
 main {
     position: relative;
     z-index: 9;
-    width: calc(100% - 320px);
+    width: calc(100% - 270px);
     margin-right: 0;
     margin-left: auto;
     padding: 20px 0;
@@ -95,7 +94,18 @@ img {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
+/* Custom cursor element */
+.custom-cursor {
+    position: fixed;
+    pointer-events: none;
+    width: 20px;  /* Default size */
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-in-out;
+    z-index: 9999;
+}
 /* container */
 .container {
 	max-width: 1164px;
@@ -288,7 +298,7 @@ textarea{
     left: 0;
     top: 0;
     height: 100%;
-    width: 300px;
+    width: 250px;
     background-color: #393E46;
     z-index: 999;
 }
@@ -321,13 +331,13 @@ textarea{
 }
 .my-socails-link-wrapper a i {
     color: #EEEEEE;
-    font-size: 20px;
+    font-size: 15px;
     background: #00ADB5;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     transition: all 0.3s linear;
 }
@@ -339,7 +349,7 @@ textarea{
     margin-top: 24px;
 }
 .sidebar-portoflio {
-    padding: 0 24px;
+    padding: 0 15px;
 }
 .my-profile {
     border-bottom: 1px solid #eeee;
@@ -477,13 +487,12 @@ textarea{
     font-size: 20px;
 }
 .title-wrapper{
-    font-size: 96px;
+    font-size: 100px;
 }
 /* banner section end */
 
 /* about me section start */
 .about-me-content  .paragrap-area {
-    margin-top: 70px;
     margin-bottom: 55px;
 }
 
@@ -625,6 +634,7 @@ textarea{
 
 .project-content h4 {
     color: #EEEEEE;
+    margin-bottom: 0;
 }
 .project-bottom-wrapper{
     margin-top: 30px;
@@ -638,6 +648,9 @@ textarea{
 .showcase-area .row {
     --bs-gutter-x: 15px;
     --bs-gutter-y: 30px;
+}
+.project-content {
+    min-height: 80px;
 }
 /* portfolio section end */
 
@@ -700,11 +713,11 @@ textarea{
 .div-rotator
 {	
 margin: 0;
-font-size:20px;
-width:100%;   /* do not set height, the script resets the effective values */
-height:500px;   
+font-size:16px;
+width:100%;   
+height:550px;   
 color:#00ADB5;
-padding: 70px !important;
+padding: 50px !important;
 }
 
 
@@ -755,5 +768,53 @@ border-radius:1em;
 }
 
 
+@keyframes rubberBand {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    30% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+      transform: scale3d(1.25, 0.75, 1);
+    }
+  
+    40% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+      transform: scale3d(0.75, 1.25, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.15, 0.85, 1);
+      transform: scale3d(1.15, 0.85, 1);
+    }
+  
+    65% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+      transform: scale3d(0.95, 1.05, 1);
+    }
+  
+    75% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+      transform: scale3d(1.05, 0.95, 1);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
 
 
+
+
+  .letter {
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+  }
+  
+  .letter:hover {
+    color: #EEEEEE;
+    animation: rubberBand 1s;
+
+  }

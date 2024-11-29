@@ -1,5 +1,51 @@
 (function ($) {
 	$(document).ready(function () {
+
+		// Create a custom cursor element
+		const $cursor = $('<div class="custom-cursor"></div>');
+		$('body').append($cursor);
+	
+		// Move the cursor based on mouse position
+		$(document).mousemove(function(e) {
+			$cursor.css({
+				left: e.pageX,
+				top: e.pageY
+			});
+		});
+	
+		// Change the body cursor dynamically
+		$('#cursor-default').click(function() {
+			$('body').css('cursor', 'url("default-cursor.png"), auto');
+		});
+	
+		$('#cursor-pointer').click(function() {
+			$('body').css('cursor', 'pointer');
+		});
+	
+		$('#cursor-crosshair').click(function() {
+			$('body').css('cursor', 'crosshair');
+		});
+
+
+
+
+		
+		// Set the offset value (e.g., height of a sticky header)
+		var offset = 50; // Adjust as needed
+
+		$('.main-menu > ul li a').on('click', function (e) {
+			e.preventDefault(); // Prevent default anchor click behavior
+	
+			// Get the target section ID
+			var target = $(this).attr('href');
+	
+			// Scroll to the section with offset
+			$('html, body').animate({
+				scrollTop: $(target).offset().top - offset
+			}, 800); // Adjust the animation duration as needed
+		});
+
+
 		$(".portfolio-btn").each(function (index, item) {
 			$(item).on("mousemove", function (e) {
 				let target = $(e.target);
@@ -208,6 +254,89 @@
 				});
 			});
 		}
+
+		gsap.registerPlugin(SplitText, ScrollTrigger);
+		let textWrappers = $(".animation-text");
+		let mainTitleSplit = new SplitText(textWrappers, {
+			type: "lines,chars",
+			linesClass: "line-wrapper",
+			charsClass: "letter d-inline-block",
+			tag: "span"
+		});
+		$(".line-wrapper").each(function () {
+			let letters = $(this).find(".letter");
+			gsap.fromTo(
+				letters,
+				{ 
+					x: 15, 
+					y:5,
+					opacity: 0, 
+					scale: 0.5, 
+				},
+				{ 
+					x: 0, 
+					y:0,
+					opacity: 1, 
+					scale: 1,
+					scrollTrigger: {
+						trigger: this,
+						start: "top bottom",
+						end: "bottom top",
+						toggleActions: "play none none reverse",
+					},
+					duration: 0.5,
+					stagger: 0.1, 
+					ease: "power1.out" 
+				}
+			);
+		});
+
+		 // animation line
+		 gsap.utils.toArray(".animation-line").forEach((element) => {
+            gsap.fromTo(
+                element,
+                {
+                    y: 100,
+                    opacity: 0,
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.5,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 90%",
+                        toggleActions: "play none none reverse",
+
+                    },
+                }
+            );
+        });
+
+
+
+		// lenis
+        // Initialize a new Lenis instance for smooth scrolling
+        const lenis = new Lenis();
+
+        // Listen for the 'scroll' event and log the event data to the console
+        // lenis.on('scroll', (e) => {
+        //     console.log(e);
+        // });
+
+        // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+        lenis.on('scroll', ScrollTrigger.update);
+
+        // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+        // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+        });
+
+        // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+        gsap.ticker.lagSmoothing(0);
+        // lenis
 
 	});
 })(jQuery);
