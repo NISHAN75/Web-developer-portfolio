@@ -163,7 +163,7 @@
 				const map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
 				const customIcon = {
-					url: "http://127.0.0.1:5500/assets/images/map/map-icon.png",
+					url: "assets/images/map/map-icon.png",
 					scaledSize: new google.maps.Size(40, 40),
 					origin: new google.maps.Point(0, 0),
 					anchor: new google.maps.Point(25, 50),
@@ -284,6 +284,8 @@
 		const $cursor = $('<div class="custom-cursor"></div>');
 		$('body').append($cursor);
 		$(document).mousemove(function(e) {
+			console.log(e);
+			
 			$cursor.css({
 				left: e.clientX,
 				top: e.clientY,
@@ -292,27 +294,6 @@
 		$('#cursor-pointer').click(function() {
 			$('body').css('cursor', 'pointer');
 		});
-		// Smooth cursor movement with GSAP
-		let cursorX = 0, cursorY = 0;
-		let mouseX = 0, mouseY = 0;
-		const cursorSpeed = 0.1; // Adjust this value for more or less smoothness
-
-		$(document).mousemove(function(e) {
-			mouseX = e.clientX;
-			mouseY = e.clientY;
-		});
-
-		// GSAP animation for smooth cursor movement
-		gsap.ticker.add(function() {
-			cursorX += (mouseX - cursorX) * cursorSpeed;
-			cursorY += (mouseY - cursorY) * cursorSpeed;
-
-			gsap.set($cursor, {
-				x: cursorX - $cursor.width() / 2,
-				y: cursorY - $cursor.height() / 2
-			});
-		});
-
 		$('#cursor-crosshair').click(function() {
 			$('body').css('cursor', 'crosshair');
 		});
