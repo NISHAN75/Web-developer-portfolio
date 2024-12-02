@@ -1,48 +1,14 @@
 (function ($) {
 	$(document).ready(function () {
 
-		// Create a custom cursor element
-		const $cursor = $('<div class="custom-cursor"></div>');
-		$('body').append($cursor);
-	
-		// Move the cursor based on mouse position
-		$(document).mousemove(function(e) {
-			$cursor.css({
-				left: e.pageX,
-				top: e.pageY
-			});
-		});
-	
-		// Change the body cursor dynamically
-		$('#cursor-default').click(function() {
-			$('body').css('cursor', 'url("default-cursor.png"), auto');
-		});
-	
-		$('#cursor-pointer').click(function() {
-			$('body').css('cursor', 'pointer');
-		});
-	
-		$('#cursor-crosshair').click(function() {
-			$('body').css('cursor', 'crosshair');
-		});
-
-
-
-
-		
 		// Set the offset value (e.g., height of a sticky header)
-		var offset = 50; // Adjust as needed
-
+		let offset = 50;
 		$('.main-menu > ul li a').on('click', function (e) {
-			e.preventDefault(); // Prevent default anchor click behavior
-	
-			// Get the target section ID
+			e.preventDefault(); 
 			var target = $(this).attr('href');
-	
-			// Scroll to the section with offset
 			$('html, body').animate({
 				scrollTop: $(target).offset().top - offset
-			}, 800); // Adjust the animation duration as needed
+			}, 800); 
 		});
 
 
@@ -315,7 +281,41 @@
         });
 
 
+		// Create a custom cursor element
+		const $cursor = $('<div class="custom-cursor"></div>');
+		$('body').append($cursor);
 
+
+
+		// Smooth cursor movement with GSAP
+		let cursorX = 0, cursorY = 0;
+		let mouseX = 0, mouseY = 0;
+		const cursorSpeed = 0.1; // Adjust this value for more or less smoothness
+
+		$(document).mousemove(function(e) {
+		mouseX = e.clientX;
+		mouseY = e.clientY;
+		});
+
+		// GSAP animation for smooth cursor movement
+		gsap.ticker.add(function() {
+		cursorX += (mouseX - cursorX) * cursorSpeed;
+		cursorY += (mouseY - cursorY) * cursorSpeed;
+		console.log(cursorX , cursorY);
+		gsap.set($cursor, {
+		x: cursorX - $cursor.width() / 2,  // Adjust to center the custom cursor
+		y: cursorY - $cursor.height() / 2  // Adjust to center the custom cursor
+		});
+		});
+
+		// Change cursor styles when clicking on elements
+		$('#cursor-pointer').click(function() {
+		$('body').css('cursor', 'pointer');  // Default pointer cursor
+		});
+
+		$('#cursor-crosshair').click(function() {
+		$('body').css('cursor', 'crosshair');  // Default crosshair cursor
+		});
 		// lenis
         // Initialize a new Lenis instance for smooth scrolling
         const lenis = new Lenis();

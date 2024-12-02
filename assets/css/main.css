@@ -45,7 +45,6 @@ body {
 	line-height: 1.5;
 	font-weight: 400;
     font-family: "Rajdhani", sans-serif;
-    cursor:none;
 }
 
 html.lenis,
@@ -98,13 +97,13 @@ img {
 .custom-cursor {
     position: fixed;
     pointer-events: none;
-    width: 20px;  /* Default size */
+    width: 20px;
     height: 20px;
-    background-color: #000;
+    background-color: #EEEEEE;
     border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease-in-out;
+    transition: transform 0.1s linear;
     z-index: 9999;
+    mix-blend-mode: difference;
 }
 /* container */
 .container {
