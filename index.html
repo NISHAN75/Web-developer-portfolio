@@ -18,29 +18,27 @@
 		<title>Nishan Das</title>
 	</head>
 	<body class="contact-page">
+		<div id="mousepointer">
+			<div>
+				<div id="scopri">click</div>
+			</div>
+		</div>
 
-		<!-- header section start -->
-		<header class="header-area">
-			<div class="sidebar-portoflio">
-				<div class="my-profile">
-					<div class="my-img">
-						<img src="assets/images/portfolio/portfolio-img-02.jpg" alt="portfolio-img">
-					</div>
-					<div class="my-information text-center">
-						<div class="my-information-info mb-p">
-							<h5>Nishan Das</h5>
-							<p>Web Developer</p>
-						</div>
-						<div class="my-socails-link-wrapper">
-							<a href="https://www.facebook.com/nishan.das.3766"><i class="fab fa-facebook-f"></i></a>
-							<a href="https://github.com/NISHAN75"><i class="fab fa-github-alt"></i></a>
-							<a href="https://www.linkedin.com/in/nishan-das-00bb58215/"><i class="fab fa-linkedin-in"></i></a>
-							<a href="https://www.instagram.com/nishan__das58/"><i class="fab fa-instagram"></i></a>
-							<a href="https://x.com/Nishandas880Das"><i class="fab fa-twitter"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="main-menu">
+
+		<!-- offcanvas section start -->
+		
+
+		<div class="header-offcanvas offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+		  <div class="offcanvas-header justify-content-between">
+			<h5 class="mb-0" id="offcanvasRightLabel">Nishan Das</h5>
+			<button type="button" class="close-icon" data-bs-dismiss="offcanvas" aria-label="Close">
+				<span></span>
+				<span></span>
+			</button>
+		  </div>
+		  <div class="offcanvas-body">
+			<div class="mobile-menu">
+				<nav>
 					<ul>
 						<li><a href="#home"><i class="far fa-home-alt"></i>Home</a></li>
 						<li><a href="#about"><i class="far fa-user"></i>About Me</a></li>
@@ -49,6 +47,75 @@
 						<li><a href="#blog"><i class="fas fa-chalkboard-teacher"></i>Blog</a></li>
 						<li><a href="#contact"><i class="far fa-address-card"></i>Contact</a></li>
 					</ul>
+				</nav>
+				<h6>Follow Me</h6>
+				<div class="my-socails-link-wrapper">
+					<a href="https://www.facebook.com/nishan.das.3766"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://github.com/NISHAN75"><i class="fab fa-github-alt"></i></a>
+					<a href="https://www.linkedin.com/in/nishan-das-00bb58215/"><i class="fab fa-linkedin-in"></i></a>
+					<a href="https://www.instagram.com/nishan__das58/"><i class="fab fa-instagram"></i></a>
+					<a href="https://x.com/Nishandas880Das"><i class="fab fa-twitter"></i></a>
+				</div>
+			</div>
+		  </div>
+		</div>
+		<!-- offcanvas section end -->
+
+
+
+
+		<!-- header section start -->
+		<header>
+			<div class="mobile-header d-block d-lg-none">
+				<div class="container">
+					<div class="row align-items-center justify-content-between">
+						<div class="col-6">
+							<div class="mobile-header-logo">
+								<h5 class="mb-0">Nishan Das</h5>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="menu-wraper d-flex justify-content-end">
+								<button type="button" class="menu-icon" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+									<span></span>
+									<span></span>
+									<span></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-area d-none d-lg-block">
+				<div class="sidebar-portoflio">
+					<div class="my-profile">
+						<div class="my-img">
+							<img src="assets/images/portfolio/portfolio-img-02.jpg" alt="portfolio-img">
+						</div>
+						<div class="my-information text-center">
+							<div class="my-information-info mb-p">
+								<h5>Nishan Das</h5>
+								<p>Web Developer</p>
+							</div>
+							<div class="my-socails-link-wrapper">
+								<a href="https://www.facebook.com/nishan.das.3766"><i class="fab fa-facebook-f"></i></a>
+								<a href="https://github.com/NISHAN75"><i class="fab fa-github-alt"></i></a>
+								<a href="https://www.linkedin.com/in/nishan-das-00bb58215/"><i class="fab fa-linkedin-in"></i></a>
+								<a href="https://www.instagram.com/nishan__das58/"><i class="fab fa-instagram"></i></a>
+								<a href="https://x.com/Nishandas880Das"><i class="fab fa-twitter"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="main-menu">
+						<ul>
+							<li><a href="#home"><i class="far fa-home-alt"></i>Home</a></li>
+							<li><a href="#about"><i class="far fa-user"></i>About Me</a></li>
+							<li><a href="#skill"><i class="far fa-code"></i></i>My Skills</a></li>
+							<li><a href="#portfolio"><i class="fal fa-laptop-code"></i>Portfolio</a></li>
+							<li><a href="#blog"><i class="fas fa-chalkboard-teacher"></i>Blog</a></li>
+							<li><a href="#contact"><i class="far fa-address-card"></i>Contact</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -66,7 +133,7 @@
 	
 				<div class="layout-design">
 					<!-- banner section start -->
-					<section  id="home" class="banner-area section-padding pt-0">
+					<section  id="home" class="banner-area section-padding pt-0 d-flex align-items-center">
 						<div class="banner-content-wrapper text-zone animation-line">
 							<h1 class="position-relative title-wrapper z-1 animation-text">
 								Hi,
@@ -86,11 +153,11 @@
 	
 					<!-- about us section start -->
 					<section  id="about" class="about-me-area section-padding overflow-hidden pt-0">
-						<div class="title-wrapper text-zone">
+						<div class="text-zone">
 							<h2 class="title-wrapper animation-text">Me & Myself</h2>
 						</div>
 						<div class="row align-items-center">
-							<div class="col-lg-6">
+							<div class="col-xl-6">
 								<div class="about-me-content text-zone animation-line">
 									<div class="paragrap-area mb-p position-relative z-1">
 										<p>I'm a front-end developer from Bangladesh, with a passion for crafting engaging UI effects, animations, and intuitive user experiences. I specialize in front-end development, creating responsive websites that are fast, user-friendly, and built on best practices.</p>
@@ -100,7 +167,7 @@
 									<a download class="portfolio-btn" href="https://drive.google.com/drive/folders/1fpAWQGY6V_rgPNPnj8DVwe4kfhuZQrbp"><i class="fal fa-download"></i>My Resume</a>
 								</div>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-xl-6">
 								<div class="div-rotator overflow-auto animation-line">
 									<a>MongoDB</a>	
 									<a>ExpressJs</a>	
@@ -167,7 +234,7 @@
 					<!-- skill and experience section start -->
 					<section  id="skill" class="skill-area section-padding pt-0">
 						<div class="row align-items-center">
-							<div class="col-lg-6">
+							<div class="col-xl-6">
 								<div class="skill-content-wrapper text-zone animation-line">
 									<h2 class="title-wrapper animation-text" >
 										Skills &
@@ -182,7 +249,7 @@
 
 								</div>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-xl-6">
 								<div class="inside-skills mt-10 animation-line">
 									<div class="prograss-area overflow-hidden">
 									  <div class="prograss-item position-relative z-1 animation-line">
@@ -211,7 +278,7 @@
 									  </div>
 								
 									</div>
-									<div class="skills-box d-flex align-items-start">
+									<div class="skills-box">
 									  <div class="box-area animation-line">
 										<h6>Front-end Developer</h6>
 										<div class="time-line">
@@ -238,19 +305,19 @@
 						</div>
 						<div class="counter-wrapper">
 							<div class="row">
-								<div class="col-sm-4">
+								<div class="col-lg-4">
 									<div class="counter-card text-center animation-line">
 										<span class="counter">85+</span>
 										<h4 class="mb-0">Complated Project </h4>
 									</div>
 								</div>
-								<div class="col-sm-4">
+								<div class="col-lg-4">
 									<div class="counter-card text-center animation-line">
 										<span class="counter">3+</span>
 										<h4 class="mb-0">Years Of Experience</h4>
 									</div>
 								</div>
-								<div class="col-sm-4">
+								<div class="col-lg-4">
 									<div class="counter-card text-center animation-line">
 										<span class="counter">15+</span>
 										<h4 class="mb-0">Worldwide client</h4>
@@ -272,7 +339,7 @@
 
 						</div>
 						<div class="showcase-area overflow-hidden animation-line">
-							<div class="filter-buttons d-flex align-items-center flex-wrap gap-3 justify-content-center">
+							<div class="filter-buttons d-flex align-items-center flex-wrap justify-content-center">
 								<!-- Filter Buttons -->
 								<button class="active" data-filter="*">Show All</button>
 								<button data-filter=".front-end">Front-end</button>
@@ -280,7 +347,7 @@
 								<button data-filter=".web-app">Web App</button>
 							</div>
 							<div class="row grid">
-								<div class="col-lg-6 grid-item front-end">
+								<div class="col-xl-6 col-lg-6  grid-item front-end">
 									<div class="project-card animation-line">
 										<div class="project-img-wrapper  overflow-hidden position-relative z-1">
 											<div class="project-img">
@@ -291,13 +358,13 @@
 											</div>
 											
 										</div>
-										<div class="project-tag d-flex align-items-center gap-1">
+										<div class="project-tag d-flex align-items-center gap-1 flex-wrap">
 											<a href="#" class="tag-btn">Gsap</a>
 											<a href="#" class="tag-btn">JavaScript</a>
 											<a href="#" class="tag-btn">Web Development</a>
 										</div>
 										<div class="project-content">
-											<h4>Responsive Website Development for Cravings Cafe</h4>
+											<h4>Crafting a Responsive Website for Cravings Cafe</h4>
 										</div>
 										<div class="project-bottom-wrapper d-flex align-items-center gap-3">
 											<a class="portfolio-btn" href="https://nishan75.github.io/Cravings-Cafe/">Live Demo</a>
@@ -305,7 +372,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-6 grid-item front-end">
+								<div class="col-xl-6 col-lg-6  grid-item front-end">
 									<div class="project-card animation-line">
 										<div class="project-img-wrapper  overflow-hidden position-relative z-1">
 											<div class="project-img">
@@ -319,7 +386,7 @@
 												</a>
 											</div>
 										</div>
-										<div class="project-tag d-flex align-items-center gap-1">
+										<div class="project-tag d-flex align-items-center gap-1 flex-wrap">
 											<a href="#" class="tag-btn">Gsap</a>
 											<a href="#" class="tag-btn">Sass</a>
 											<a href="#" class="tag-btn">Web Development</a>
@@ -333,7 +400,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-6 grid-item front-end">
+								<div class="col-xl-6 col-lg-6  grid-item front-end">
 									<div class="project-card animation-line">
 										<div class="project-img-wrapper  overflow-hidden position-relative z-1">
 											<div class="project-img">
@@ -348,7 +415,7 @@
 											</div>
 										
 										</div>
-										<div class="project-tag d-flex align-items-center gap-1">
+										<div class="project-tag d-flex align-items-center gap-1 flex-wrap">
 											<a href="#" class="tag-btn">Gsap</a>
 											<a href="#" class="tag-btn">Bootstrap</a>
 											<a href="#" class="tag-btn">Web Development</a>
@@ -362,7 +429,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-6 grid-item front-end web-app">
+								<div class="col-xl-6 col-lg-6  grid-item front-end web-app">
 									<div class="project-card animation-line">
 										<div class="project-img-wrapper  overflow-hidden position-relative z-1">
 											<div class="project-img">
@@ -376,7 +443,7 @@
 												</a>
 											</div>
 										</div>
-										<div class="project-tag d-flex align-items-center gap-1">
+										<div class="project-tag d-flex align-items-center gap-1 flex-wrap">
 											<a href="#" class="tag-btn">Web App</a>
 											<a href="#" class="tag-btn">Bootstrap</a>
 											<a href="#" class="tag-btn">Web Development</a>
@@ -390,7 +457,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-6 grid-item front-end">
+								<div class="col-xl-6 col-lg-6  grid-item front-end">
 									<div class="project-card animation-line">
 										<div class="project-img-wrapper  overflow-hidden position-relative z-1">
 											<div class="project-img">
@@ -404,7 +471,7 @@
 												</a>
 											</div>
 										</div>
-										<div class="project-tag d-flex align-items-center gap-1">
+										<div class="project-tag d-flex align-items-center gap-1 flex-wrap">
 											<a href="#" class="tag-btn">Css</a>
 											<a href="#" class="tag-btn">Bootstrap</a>
 											<a href="#" class="tag-btn">Web Development</a>
@@ -418,7 +485,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-6 grid-item front-end back-end">
+								<div class="col-xl-6 col-lg-6  grid-item front-end back-end">
 									<div class="project-card animation-line">
 										<div class="project-img-wrapper  overflow-hidden position-relative z-1">
 											<div class="project-img">
@@ -432,7 +499,7 @@
 												</a>
 											</div>
 										</div>
-										<div class="project-tag d-flex align-items-center gap-1">
+										<div class="project-tag d-flex align-items-center gap-1 flex-wrap">
 											<a href="#" class="tag-btn">Css</a>
 											<a href="#" class="tag-btn">Bootstrap</a>
 											<a href="#" class="tag-btn">Web Development</a>
@@ -446,7 +513,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-6 grid-item front-end back-end">
+								<div class="col-xl-6 col-lg-6  grid-item front-end back-end">
 									<div class="project-card animation-line">
 										<div class="project-img-wrapper  overflow-hidden position-relative z-1">
 											<div class="project-img">
@@ -460,7 +527,7 @@
 												</a>
 											</div>
 										</div>
-										<div class="project-tag d-flex align-items-center gap-1">
+										<div class="project-tag d-flex align-items-center gap-1 flex-wrap">
 											<a href="#" class="tag-btn">Css</a>
 											<a href="#" class="tag-btn">Bootstrap</a>
 											<a href="#" class="tag-btn">Web Development</a>
@@ -474,7 +541,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-6 grid-item front-end">
+								<div class="col-xl-6 col-lg-6  grid-item front-end">
 									<div class="project-card animation-line">
 										<div class="project-img-wrapper  overflow-hidden position-relative z-1">
 											<div class="project-img">
@@ -488,13 +555,13 @@
 												</a>
 											</div>
 										</div>
-										<div class="project-tag d-flex align-items-center gap-1">
+										<div class="project-tag d-flex align-items-center gap-1 flex-wrap">
 											<a href="#" class="tag-btn">Css</a>
 											<a href="#" class="tag-btn">Bootstrap</a>
 											<a href="#" class="tag-btn">Web Development</a>
 										</div>
 										<div class="project-content">
-											<h4>Beep: Designing Simplicity and Elegance for Online Shopping</h4>
+											<h4>Beep: Simplifying Online Shopping with Elegance</h4>
 										</div>
 										<div class="project-bottom-wrapper d-flex align-items-center gap-3">
 											<a class="portfolio-btn" href="https://nishan75.github.io/beep.io/">Live Demo</a>
@@ -531,12 +598,12 @@
 											</div>
 											
 										</div>
-										<div class="project-tag d-flex align-items-center gap-1">
+										<div class="project-tag d-flex align-items-center gap-1 flex-wrap">
 											<a href="#" class="tag-btn">Python</a>
 											<a href="#" class="tag-btn">Web Development</a>
 										</div>
 										<div class="project-content">
-											<h4>Top 5 Web Development Languages to Master This Year</h4>
+											<h4>Top 5 Web Development Languages to Learn in 2025</h4>
 										</div>
 										<div class="project-bottom-wrapper">
 											<a href="#" class="portfolio-btn">Read More</a>
@@ -554,7 +621,7 @@
 											</div>
 											
 										</div>
-										<div class="project-tag d-flex align-items-center gap-1">
+										<div class="project-tag d-flex align-items-center gap-1 flex-wrap">
 											<a href="#" class="tag-btn">ReactJs</a>
 											<a href="#" class="tag-btn">AngularJs</a>
 											<a href="#" class="tag-btn">JavaScript</a>

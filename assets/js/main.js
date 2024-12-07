@@ -1,6 +1,124 @@
 (function ($) {
 	$(document).ready(function () {
 
+
+		// header sticky
+		var windowOn = $(window);
+		windowOn.on('scroll', function () {
+			if ($("body").hasClass("home")) {
+				var scroll = windowOn.scrollTop();
+				if (scroll < 100) {
+					$(".header-area").removeClass("header-sticky");
+					$(".header-offcanvas").removeClass("version-2");
+				} else {
+					$(".header-area").addClass("header-sticky");
+					$(".header-offcanvas").addClass("version-2");
+				}
+			}
+		});
+
+		let offcanvasElement = $(".header-offcanvas");
+        offcanvasElement.on("show.bs.offcanvas", function () {
+            $(".menu-icon").addClass("open");
+            $(".close-icon span:nth-child(1)").css({
+                transform: "rotate(45deg)"
+            });
+            $(".close-icon span:nth-child(2)").css({
+                transform: "rotate(-45deg)",
+                marginTop: "-2px"
+            });
+        });
+        offcanvasElement.on("hide.bs.offcanvas", function () {
+            $(".menu-icon").removeClass("open");
+            $(".close-icon span:nth-child(1)").css({
+                transform: ""
+            });
+            $(".close-icon span:nth-child(2)").css({
+                transform: "",
+                marginTop: ""
+            });
+        });
+	  
+
+
+
+		// mouse pointer
+		var mousepointerDiv = document.querySelector('#mousepointer>div>*');
+		var mousepointer = document.querySelector('#mousepointer');
+		var all_link;
+		var all_submit;
+
+		const cursor = document.querySelector('#mousepointer');
+
+		let mouseX = 0;
+		let mouseY = 0;
+		let cursorX = 0;
+		let cursorY = 0;
+		let speed = 0.5;
+
+		function animate() {
+			let distX = mouseX - cursorX;
+
+			let distY = mouseY - cursorY;
+
+			cursorX = cursorX + (distX * speed);
+			cursorY = cursorY + (distY * speed);
+
+			cursor.style.left = cursorX - 40 + 'px';
+			cursor.style.top = cursorY - 40 + 'px';
+			requestAnimationFrame(animate);
+		}
+
+		animate();
+
+		document.addEventListener('mousemove', (event) => {
+			mouseX = event.clientX + 19;
+			mouseY = event.clientY + 18;
+		})
+
+		mouse_mo();
+
+		function mouse_mo() {
+			all_link = document.querySelectorAll('a');
+
+			for (var i = 0; i < all_link.length; i++) {
+				var el = all_link[i];
+				el.addEventListener("mouseover", event => {
+					mousepointerDiv.classList.remove('active');
+					mousepointer.classList.add('active');
+				});
+
+				el.addEventListener("mouseout", event => {
+					mousepointer.classList.remove('active');
+				});
+			}
+			all_letter = document.querySelectorAll('.letter');
+
+			for (var i = 0; i < all_letter.length; i++) {
+				var el = all_letter[i];
+				el.addEventListener("mouseover", event => {
+					mousepointerDiv.classList.remove('active');
+					mousepointer.classList.add('active');
+				});
+
+				el.addEventListener("mouseout", event => {
+					mousepointer.classList.remove('active');
+				});
+			}
+
+			all_submit = document.querySelectorAll('input[type="range"]');
+			for (var i = 0; i < all_submit.length; i++) {
+				var el = all_submit[i];
+				el.addEventListener("mouseover", event => {
+					mousepointerDiv.classList.remove('active');
+					mousepointer.classList.add('active');
+				});
+
+				el.addEventListener("mouseout", event => {
+					mousepointer.classList.remove('active');
+				});
+			}
+		}
 		// Set the offset value (e.g., height of a sticky header)
 		let offset = 50;
 		$('.main-menu > ul li a').on('click', function (e) {
@@ -280,23 +398,6 @@
             );
         });
 
-		// Create a custom cursor element
-		const $cursor = $('<div class="custom-cursor"></div>');
-		$('body').append($cursor);
-		$(document).mousemove(function(e) {
-			console.log(e);
-			
-			$cursor.css({
-				left: e.clientX,
-				top: e.clientY,
-			});
-		});
-		$('#cursor-pointer').click(function() {
-			$('body').css('cursor', 'pointer');
-		});
-		$('#cursor-crosshair').click(function() {
-			$('body').css('cursor', 'crosshair');
-		});
 
 
 		// lenis

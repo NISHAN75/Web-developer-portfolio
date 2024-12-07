@@ -64,7 +64,9 @@ html.lenis body {
 	overflow: hidden;
 }
 
-
+.row {
+    --bs-gutter-y: 40px;
+}
 main {
     position: relative;
     z-index: 9;
@@ -73,7 +75,9 @@ main {
     margin-left: auto;
     padding: 20px 0;
 }
-
+section{
+   min-height: 100vh;
+}
 a {
 	text-decoration: none;
 	color: #EEEEEE;
@@ -93,19 +97,94 @@ img {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-/* Custom cursor element */
-.custom-cursor {
-    position: fixed;
-    pointer-events: none;
-    width: 20px;
-    height: 20px;
-    background-color: #EEEEEE;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform 0.5s linear;
-    z-index: 9999;
-    mix-blend-mode: difference;
-}
+
+    /* Mouse pointer */
+    #mousepointer
+    {
+        z-index:999999;
+        height: 40px;
+        width: 40px;
+        position: fixed;
+        pointer-events:none;
+        -webkit-transition:left .15s ease-out, top .15s ease-out;
+        -o-transition:left .15s ease-out, top .15s ease-out;
+        transition:left .15s ease-out, top .15s ease-out;
+        mix-blend-mode:difference;
+    }
+
+    #mousepointer>div
+        {
+        width:10px;
+        height:10px;
+        position: absolute;
+        top:0px;
+        bottom:0px;
+        left:0px;
+        right:0px;
+        margin:auto;
+        opacity:1;
+        border-radius: 50%;
+        -webkit-transition:all .5s ease-out;
+        -o-transition:all .5s ease-out;
+        transition:all .5s ease-out;
+        background-color: #00ADB5;
+    }
+
+    #mousepointer>div>img,
+    #mousepointer>div>span,
+    #mousepointer>div>div
+    {
+        display:block;
+        width:50%;
+        position:absolute;
+        top:50%;
+        left:0px;
+        right:0px;
+        margin:auto;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        opacity:0;
+        -webkit-transition:opacity .3s ease-out;
+        -o-transition:opacity .3s ease-out;
+        transition:opacity .3s ease-out;
+        will-change: opacity; 
+    }
+
+    #mousepointer>div>span,
+    #mousepointer>div>div
+    {
+        width:100%;
+        text-align:center;
+        color:#000;
+    }
+
+    #mousepointer>div>*.active
+    {
+        opacity:1;
+        -webkit-transition:opacity .5s ease-out;
+        -o-transition:opacity .5s ease-out;
+        transition:opacity .5s ease-out;
+        will-change: opacity; 
+    }
+
+    #mousepointer.active>div
+    {
+        width:100%;
+        height:100%;
+        -webkit-transition:all .5s linear;
+        -o-transition:all .5s linear;
+        transition:all .5s linear;
+    }
+
+    #mousepointer.active_text
+    {
+        opacity:0;
+        -webkit-transition:opacity .5s ease-out;
+        -o-transition:opacity .5s ease-out;
+        transition:opacity .5s ease-out;
+        will-change: opacity; 
+    }
 /* container */
 .container {
 	max-width: 1164px;
@@ -291,8 +370,114 @@ textarea{
 
 /* default css end */
 
+/* offcanvas */
+.offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
+    --bs-offcanvas-width: 500px;
+}
+.offcanvas-body {
+    padding: 20px 30px;
+}
+/* offcanvas */
+
 
 /* header section start */
+
+
+/* mobile menu */
+.offcanvas-header h5 ,
+.mobile-header-logo h5 {
+    font-family: "Rajdhani", sans-serif;
+
+}
+.menu-icon{
+    border: 0;
+    background-color: transparent;
+    height: 16px;
+    width: 24px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+.menu-icon span{
+    height: 2px;
+    width: 100%;
+    background-color: #00ADB5;
+    display: inline-block;
+}
+.mobile-header {
+    padding: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+.close-icon {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+    height: 18px;
+    width: 18px;
+    -webkit-transition: top ease-in-out.3s, -webkit-transform ease-in-out.3s .3s;
+    -o-transition: top ease-in-out.3s, transform ease .3s .3s;
+    transition: background-color ease-in-out.3s, top ease-in-out.3s, transform ease-in-out.3s .3s, -webkit-transform ease-in-out.3s .3s;
+    justify-content: center;
+    transform: translateY(-2px);
+    border: 0;
+    background-color: transparent;
+}
+.close-icon span {
+    display: inline-block;
+    background-color: #00ADB5;
+    height: 2px;
+    width: 18px;
+    transition: all 0.5s ease-out;
+}
+.mobile-menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.mobile-menu ul li {
+    margin-bottom: 15px;
+}
+.mobile-menu ul li a {
+    color: #000;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.3;
+    transition: all 0.3s ease-in-out;
+}
+.mobile-menu ul li a i{
+    display: inline-block;
+    margin-right: 12px;
+    width: 25px;
+    transition: all 0.3s ease-in-out;
+}
+.mobile-menu ul li a:hover{
+    color: #00ADB5;
+}
+.mobile-menu nav {
+    margin-bottom: 40px;
+}
+.mobile-menu h6{
+    margin-bottom: 0;
+    font-family: "Rajdhani", sans-serif;
+}
+.mobile-menu .my-socails-link-wrapper {
+    margin-top: 10px;
+}
+/* mobile menu */
+
+
+
+
 .header-area {
     position: fixed;
     left: 0;
@@ -487,7 +672,7 @@ textarea{
     font-size: 20px;
 }
 .title-wrapper{
-    font-size: 100px;
+    font-size: 110px;
 }
 /* banner section end */
 
@@ -534,6 +719,8 @@ textarea{
     font-size: 13px;
 }
 .skills-box {
+    display: flex;
+    align-items: start;
     gap: 10px;
     margin-top: 30px;
 }
@@ -567,6 +754,7 @@ textarea{
 }
 .filter-buttons {
     margin-bottom: 40px;
+    gap: 16px;
 }
 
 .filter-buttons button {
@@ -640,13 +828,13 @@ textarea{
     margin-top: 30px;
 }
 .project-img img {
-    min-height: 237px;
+    height: 257px;
     width: 100%;
     object-fit: cover;
     display: inline-block;
 }
 .showcase-area .row {
-    --bs-gutter-x: 15px;
+    --bs-gutter-x: 10px;
     --bs-gutter-y: 30px;
 }
 .project-content {
@@ -710,14 +898,14 @@ textarea{
 }
 /* contact section end */
 
-.div-rotator
-{	
-margin: 0;
-font-size:16px;
-width:100%;   
-height:550px;   
-color:#00ADB5;
-padding: 50px !important;
+.div-rotator {
+    margin: 0;
+    font-size: 16px;
+    width: 600px;
+    height: 550px;
+    color: #00ADB5;
+    padding: 20px !important;
+    overflow: hidden !important;
 }
 
 

@@ -19,13 +19,60 @@ Version: 1.0
 9.footer section css
 -----------------------------------
 /* min-width 1430 */
-@media (min-width: 1430px) {}
+@media (max-width: 1430px) {
 
-/* max-width 1399 */
-@media (max-width: 1399.98px) {}
+    .title-wrapper {
+        font-size: 96px;
+    }
+    .div-rotator {
+        width: 100%;
+        height: 450px;
+    }
+    .sidebar-portoflio {
+        padding: 0 10px;
+    }
+    /* about me section start */
+    .about-me-content  .paragrap-area {
+        margin-top: 70px;
+    }
+
+    /* about me section end */
+}
+
+/* max-width 1300 */
+@media (max-width: 1300px) {
+    .title-wrapper {
+        font-size: 85px;
+    }
+    .skills-box{
+        display: block;
+    }
+    .box-area {
+        min-height: 100%;
+        margin-bottom: 10px;
+    }
+}
 
 /* max-width 1199 */
 @media (max-width: 1199.98px) {
+
+    .skills-box{
+        display: flex;
+    }
+    .box-area {
+        margin-bottom: 0px;
+        min-height: 292px;
+    }
+    .tag-btn {
+        padding: 2px 10px;
+        font-size: 14px;
+    }
+    .portfolio-btn {
+        padding: 7px 18px;
+    }
+    .project-content {
+        min-height: 116px;
+    }
 }
 
 /* max-width 1399 - min-width 992*/
@@ -33,28 +80,161 @@ Version: 1.0
 
 /* max-width 991 */
 @media (max-width: 991.98px) {
+
+    /* all padding */
+    .section-padding{
+        padding: 70px 0;
+    }
+    /* all padding */
+    .top-head-tags-area {
+        margin-bottom:15px;
+    }
+    /* heading */
+    
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 28px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    h6 {
+        font-size: 18px;
+    }
+
+    /* heading */
 	
+    .banner-content-wrapper p {
+        font-size: 16px;
+    }
+    /* main */
+    main {
+        width: 100%;
+        margin-top: 44px;
+    }
+    /* main */
+
+    /* about me section start */
+    .div-rotator {
+        max-width: 600px;
+        height: 600px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /* about me section end */
+
+    /* project section start */
+    .project-content {
+        min-height: 100%;
+    }
+    /* project section end */
 
 }
 
 /* max-width 767 */
 @media (max-width: 767.98px) {
+
+    /* all padding */
+    .section-padding{
+        padding: 50px 0;
+    }
+    /* all padding */
+
+    /* heading */
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+
+    /* heading */
+    .title-wrapper {
+        font-size: 65px;
+    }
+    .counter {
+        font-size: 50px;
+    }
+    .filter-buttons button {
+        font-size: 16px;
+    }
+    .div-rotator {
+        height: 450px;
+    }
+
 	
 }
 
 /* max-width 575 */
 @media (max-width: 575.98px) {
-
+    .layout-design {
+        margin: 0 15px;
+    }
+    .title-wrapper {
+        font-size: 50px;
+    }
+    .div-rotator {
+        height: 400px;
+    }
+    .skills-box {
+        display: block;
+    }
+    .box-area {
+        min-height: 100%;
+        margin-bottom: 10px;
+    }
 }
 
 /* max-width 479 */
 @media (max-width: 479.98px) {
-	
+    .title-wrapper {
+        font-size: 40px;
+    }
+    .div-rotator {
+        height: 300px;
+    }
+    .filter-buttons {
+        gap: 10px;
+    }
+
 }
 
 /* max-width 383 */
 @media (max-width: 383.98px) {
 
-	
+    .filter-buttons {
+        gap: 7px;
+    }
+    .tag-btn {
+        padding: 2px 5px;
+    }
+    .project-img img {
+        height: 200px;
+    }
 
 }
