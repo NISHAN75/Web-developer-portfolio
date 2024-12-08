@@ -393,7 +393,7 @@ textarea{
     border: 0;
     background-color: transparent;
     height: 16px;
-    width: 24px;
+    width: 20px;
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
@@ -692,7 +692,7 @@ textarea{
     color: #EEEEEE;
 }
 .prograss-info {
-    height: 4px;
+    height: 6px;
     background: #EEEEEE;
     border-radius:4px;
     margin-top: 5px;
@@ -700,7 +700,7 @@ textarea{
 
 .prograss-inner-info {
     background: #00ADB5;
-    height: 4px;
+    height: 6px;
 }
 .prograss-item {
     margin-bottom: 15px;

@@ -208,6 +208,9 @@ Version: 1.0
         min-height: 100%;
         margin-bottom: 10px;
     }
+    .portfolio-btn {
+        font-size: 14px;
+    }
 }
 
 /* max-width 479 */

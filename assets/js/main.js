@@ -397,6 +397,21 @@
                 }
             );
         });
+		gsap.fromTo(
+			".prograss-inner-info",
+			{ x: "-100%", opacity: 0 }, // Start position and opacity
+			{
+			  x: "0%",    // End position
+			  opacity: 1, // Fully visible
+			  duration: 1.5, // Animation duration
+			  ease: "power2.out", // Smooth easing
+			  scrollTrigger: {
+				trigger: ".prograss-info", // Trigger when this element enters the viewport
+				start: "top 90%", // Starts animation when the top of the trigger reaches 90% of the viewport
+				toggleActions: "play none none reverse", // Play animation on scroll down, reverse on scroll up
+			  },
+			}
+		  );
 
 
 
