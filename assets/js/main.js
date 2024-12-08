@@ -1,7 +1,31 @@
 (function ($) {
 	$(document).ready(function () {
 
-
+		function sendMail() {
+			let parms = {
+				user_name: $("#name").val(),
+				user_email: $("#email").val(),
+				user_subject: $("#subject").val(),
+				message: $("#message").val(),
+			};
+			console.log("hi");
+			emailjs.send("service_vs42f2v", "template_vg5dyih", parms)
+				.then(() => {
+					alert("Email Sent!");
+					$("#name").val('');
+					$("#email").val('');
+					$("#subject").val('');
+					$("#message").val('');
+				})
+				.catch((error) => {
+					console.error("Error sending email:", error);
+				});
+		}
+		
+		$("#submit-btn").on("click", function (e) {
+			e.preventDefault();
+			sendMail();
+		});
 		// header sticky
 		var windowOn = $(window);
 		windowOn.on('scroll', function () {
@@ -436,6 +460,14 @@
         // Disable lag smoothing in GSAP to prevent any delay in scroll animations
         gsap.ticker.lagSmoothing(0);
         // lenis
+
+		// (function(){
+		// 	emailjs.init({
+		// 	  publicKey: "2---X-G8_ycDjswbq",
+		// 	});
+		//  })();
+
+
 
 	});
 })(jQuery);
