@@ -86,6 +86,7 @@ Version: 1.0
         padding: 70px 0;
     }
     /* all padding */
+
     .top-head-tags-area {
         margin-bottom:15px;
     }
@@ -116,7 +117,7 @@ Version: 1.0
     }
 
     /* heading */
-	
+
     .banner-content-wrapper p {
         font-size: 16px;
     }
@@ -126,7 +127,9 @@ Version: 1.0
         margin-top: 44px;
     }
     /* main */
-
+	.banner-area{
+        margin-top: 40px;
+    }
     /* about me section start */
     .div-rotator {
         max-width: 600px;
