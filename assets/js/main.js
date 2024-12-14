@@ -1,6 +1,5 @@
 (function ($) {
 	$(document).ready(function () {
-
 		function sendMail() {
 			let parms = {
 				user_name: $("#name").val(),
@@ -21,11 +20,45 @@
 					console.error("Error sending email:", error);
 				});
 		}
-		
-		$("#submit-btn").on("click", function (e) {
-			e.preventDefault();
+		 $("#submit-btn").on("click", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        const name = $("#name").val().trim();
+        const email = $("#email").val().trim();
+        const subject = $("#subject").val().trim();
+        const message = $("#message").val().trim();
+
+        let isValid = true;
+
+        if (name === "") {
+            alert("Name is required.");
+            isValid = false;
+        }
+
+        if (email === "") {
+            alert("Email is required.");
+            isValid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            alert("Please enter a valid email address.");
+            isValid = false;
+        }
+
+        if (subject === "") {
+            alert("Subject is required.");
+            isValid = false;
+        }
+
+        if (message === "") {
+            alert("Message is required.");
+            isValid = false;
+        }
+
+        if (isValid) {
 			sendMail();
-		});
+        }
+    });
+
+		
 		// header sticky
 		var windowOn = $(window);
 		windowOn.on('scroll', function () {
@@ -421,22 +454,48 @@
                 }
             );
         });
-		gsap.fromTo(
-			".prograss-inner-info",
-			{ x: "-100%", opacity: 0 }, // Start position and opacity
-			{
-			  x: "0%",    // End position
-			  opacity: 1, // Fully visible
-			  duration: 1.5, // Animation duration
-			  ease: "power2.out", // Smooth easing
-			  scrollTrigger: {
-				trigger: ".prograss-info", // Trigger when this element enters the viewport
-				start: "top 90%", // Starts animation when the top of the trigger reaches 90% of the viewport
-				toggleActions: "play none none reverse", // Play animation on scroll down, reverse on scroll up
-			  },
-			}
-		  );
-
+		$(window).load(function() {
+			gsap.fromTo(
+				".prograss-inner-info",
+				{ x: "-100%", opacity: 0 }, // Start position and opacity
+				{
+				  x: "0%",    // End position
+				  opacity: 1, // Fully visible
+				  duration: 1.5, // Animation duration
+				  ease: "power2.out", // Smooth easing
+				  scrollTrigger: {
+					trigger: ".prograss-info", // Trigger when this element enters the viewport
+					start: "top 90%", // Starts animation when the top of the trigger reaches 90% of the viewport
+					toggleActions: "play none none reverse", // Play animation on scroll down, reverse on scroll up
+				  },
+				}
+			  );
+			  gsap.fromTo(
+				".loading-page",
+				{ opacity: 1 },
+				{
+				  opacity: 0,
+				  display: "none",
+				  duration: 1.5,
+				  delay: 3.5,
+				}
+			  );
+			  
+			  gsap.fromTo(
+				".logo-name",
+				{
+				  y: 50,
+				  opacity: 0,
+				},
+				{
+				  y: 0,
+				  opacity: 1,
+				  duration: 2,
+				  delay: 0.5,
+				}
+			  );
+		})
+		
 
 
 		// lenis
