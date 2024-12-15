@@ -205,7 +205,7 @@
 					itemSelector: '.grid-item',
 					percentPosition: true,
 					masonry: {
-						columnWidth: 1
+						columnWidth: 2
 					}
 				});
 
@@ -520,11 +520,7 @@
         gsap.ticker.lagSmoothing(0);
         // lenis
 
-		// (function(){
-		// 	emailjs.init({
-		// 	  publicKey: "2---X-G8_ycDjswbq",
-		// 	});
-		//  })();
+
 
 
 
