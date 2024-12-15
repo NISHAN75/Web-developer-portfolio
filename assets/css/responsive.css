@@ -71,7 +71,10 @@ Version: 1.0
         padding: 7px 18px;
     }
     .project-content {
-        min-height: 116px;
+        min-height: auto;
+    }
+    .project-img img {
+        height: auto;
     }
 }
 
@@ -146,9 +149,7 @@ Version: 1.0
     .project-content {
         min-height: 100%;
     }
-    .project-img img {
-        height: auto;
-    }
+
     /* project section end */
 
 }
@@ -247,5 +248,7 @@ Version: 1.0
     .project-img img {
         height: 200px;
     }
+
+    
 
 }
