@@ -121,6 +121,7 @@ Version: 1.0
     .banner-content-wrapper p {
         font-size: 16px;
     }
+    
     /* main */
     main {
         width: 100%;
@@ -144,6 +145,9 @@ Version: 1.0
     /* project section start */
     .project-content {
         min-height: 100%;
+    }
+    .project-img img {
+        height: auto;
     }
     /* project section end */
 
