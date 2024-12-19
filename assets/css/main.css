@@ -374,8 +374,11 @@ textarea{
 .offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
     --bs-offcanvas-width: 500px;
 }
+.offcanvas-header {
+    padding: 15px 30px;
+}
 .offcanvas-body {
-    padding: 20px 30px;
+    padding: 20px 50px;
 }
 /* offcanvas */
 
