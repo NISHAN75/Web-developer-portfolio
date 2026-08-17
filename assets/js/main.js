@@ -496,7 +496,29 @@
 			  );
 		})
 		
-
+		/* ==================================================================
+				6. OVERLAYSCROLLBARS - CUSTOM SCROLLBAR
+				Replaces the native browser scrollbar on <body> with a themed
+				OverlayScrollbars instance (click-to-scroll + drag-to-scroll
+				enabled, auto-hides on mouse leave, smooth scroll behavior).
+				================================================================== */
+				const {
+					OverlayScrollbars,
+					ClickScrollPlugin
+				} = OverlayScrollbarsGlobal;
+				// Initialize the ClickScrollPlugin
+				OverlayScrollbars.plugin(ClickScrollPlugin);
+				$("body").each(function () {
+					OverlayScrollbars(this, {
+						scrollbars: {
+							clickScroll: true,
+							autoHide: "leave",
+							dragScrolling: true,
+							clickScrolling: true,
+						},
+						scrollBehavior: 'smooth',
+					});
+				});
 
 		// lenis
         // Initialize a new Lenis instance for smooth scrolling

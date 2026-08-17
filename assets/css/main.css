@@ -198,7 +198,17 @@ img {
 	background-color: #ffffff;
 	z-index: 9999;
 }
+/* ==================================================================
+   CUSTOM SCROLLBAR (OverlayScrollbars)
+   Brand-colored scrollbar handle, kept above all other content.
+   ================================================================== */
 
+.os-scrollbar-handle {
+    background: #00ADB5;
+}
+body>.os-scrollbar {
+    z-index: 999;
+}
 /* heading  style*/
 h1,
 h2,
