@@ -209,6 +209,10 @@ img {
 body>.os-scrollbar {
     z-index: 999;
 }
+.container-fluid{
+    margin-left: 0;
+    max-width: 1400px;
+}
 /* heading  style*/
 h1,
 h2,
